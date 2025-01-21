@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && eslint . --ext .ts,.tsx",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -24,4 +25,5 @@
     "eslint-config-next": "15.1.5",
     "@eslint/eslintrc": "^3"
   }
+  
 }
