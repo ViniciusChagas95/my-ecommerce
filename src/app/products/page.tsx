@@ -1,7 +1,10 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useCart } from '../context/CartContext';
 
 export default function Products() {
+    const { addToCart } = useCart();
     const products = [
       { id: 1, name: 'Product A', price: '$10', image: 'https://via.placeholder.com/150' },
       { id: 2, name: 'Product B', price: '$15', image: 'https://via.placeholder.com/150' },
@@ -29,7 +32,10 @@ export default function Products() {
                 <p className="text-gray-700">{product.price}</p>
               </Link>
               
-              <button className="mt-2 bg-blue-600 text-white py-1 px-4 rounded hover:bg-blue-700">
+              <button
+                onClick={() => addToCart(product)}
+                className="mt-2 bg-blue-600 text-white py-1 px-4 rounded hover:bg-blue-700"
+              >
                 Add to Cart
               </button>
             </div>
